@@ -24,9 +24,9 @@ const App: React.FC = () => {
       <main>
         <MainHeader>
           <HeaderTitle
-            title="서비스명"
+            title="메뉴 1"
             suffix={
-              <Button>
+              <Button color="#3367d6">
                 <MdAdd /> 기능버튼
               </Button>
             }
