@@ -1,13 +1,17 @@
 {
   "compilerOptions": {
     "outDir": "./dist/",
-    "noImplicitAny": true,
     "target": "es2015",
     "jsx": "react",
     "allowJs": true,
     "sourceMap": true,
     "module": "ES6",
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "lib": ["es6", "dom"],
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true
   },
   "include": [
     "src/**/*"
