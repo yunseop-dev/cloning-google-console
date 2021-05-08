@@ -20,9 +20,9 @@ const StyledTitle = styled.h5`
   }
 `;
 
-const HeaderTitle = ({ icon: Icon, title, suffix }: Props) => {
+const HeaderTitle = ({ icon: Icon, title, suffix, ...rest }: Props) => {
   return (
-    <StyledTitle>
+    <StyledTitle {...rest}>
       {Icon && (
         <div className="icon">
           <Icon />

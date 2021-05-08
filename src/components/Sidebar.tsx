@@ -10,15 +10,18 @@ interface Props {
 }
 
 const StyledAside = styled.aside`
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  height: 100%;
   width: 15rem;
-  height: 100vh;
-  float: left;
   border-right: 1px solid rgba(0, 0, 0, 0.2);
-  @media (max-width: 768px) {
+  @media (max-width: 768px) { 
+    position: relative;
     width: 50%;
     height: auto;
     .menu {
-      float: none;
       display: none;
     }
   }
@@ -29,8 +32,9 @@ const SideBar = ({ menuList, title }: Props) => {
     <StyledAside>
       <HeaderTitle icon={MdEventNote} title={title} />
       <Menu className="menu">
-        {menuList.map((menu) => (
+        {menuList.map((menu, index) => (
           <MenuItem
+            key={index}
             isSelected={menu.isSelected}
             title={menu.title}
             icon={menu.icon}
