@@ -17,10 +17,18 @@ const StyledAside = styled.aside`
   height: 100%;
   width: 15rem;
   border-right: 1px solid rgba(0, 0, 0, 0.2);
-  @media (max-width: 768px) { 
+  @media (max-width: 768px) {
     position: relative;
     width: 50%;
     height: auto;
+    &:hover {
+      .menu {
+        display: block;
+        position: absolute;
+        background: white;
+        width: 50vw;
+      }
+    }
     .menu {
       display: none;
     }
