@@ -1,6 +1,7 @@
 import React from "react";
+import PageWrapper from "../components/PageWrapper";
 const Home = () => {
-  return <div>Home</div>;
+  return <PageWrapper>Home</PageWrapper>;
 };
 
 export default Home;

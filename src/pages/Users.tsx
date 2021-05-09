@@ -1,6 +1,7 @@
 import React from "react";
+import PageWrapper from "../components/PageWrapper";
 const Users = () => {
-  return <div>Users</div>;
+  return <PageWrapper>Users</PageWrapper>;
 };
 
 export default Users;

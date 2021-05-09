@@ -1,12 +1,8 @@
 import React from "react";
 import useHackerNewsStoires from "../hooks/useHackerNewsStories";
-import useInfinityScroll from "../hooks/useInfinityScroll";
 import dayjs from "dayjs";
 import styled from "styled-components";
-
-const Wrapper = styled.div`
-  margin: 1rem;
-`;
+import PageWrapper from "../components/PageWrapper";
 
 const Row = styled.li`
   display: flex;
@@ -44,18 +40,14 @@ const UpdatedAt = styled.div`
   width: 30%;
 `;
 
-function About() {
+function News() {
   const { error, isLoading, items, fetchMore } = useHackerNewsStoires();
-
-  useInfinityScroll({
-    action: fetchMore,
-  });
 
   if (error) {
     return <div>{error}</div>;
   }
   return (
-    <Wrapper>
+    <PageWrapper>
       {isLoading ? (
         <div>Loading...</div>
       ) : (
@@ -80,8 +72,8 @@ function About() {
           ))}
         </ol>
       )}
-    </Wrapper>
+    </PageWrapper>
   );
 }
 
-export default About;
+export default News;
