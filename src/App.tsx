@@ -10,6 +10,7 @@ import HeaderTitle from "./components/HeaderTitle";
 import SideBar from "./components/Sidebar";
 import Button from "./components/Button";
 import { Props as MenuItemProps } from "./components/MenuItem";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 const MainHeader = styled.header`
   @media (max-width: 768px) {
@@ -41,25 +42,33 @@ const Section = styled.section`
 
 const App: React.FC = () => {
   const menuList: MenuItemProps[] = [
-    { isSelected: true, title: "메뉴 1", icon: MdAccountBalance },
-    { isSelected: false, title: "메뉴 2", icon: MdAccountBox },
-    { isSelected: false, title: "메뉴 3", icon: MdAccountCircle },
+    { title: "Home", icon: MdAccountBalance, to: "/" },
+    { title: "About", icon: MdAccountBox, to: "/about" },
+    { title: "Users", icon: MdAccountCircle, to: "/users" },
   ];
   return (
-    <main>
-      <MainHeader>
-        <SideBar menuList={menuList} title="서비스명" />
-        <HeaderTitleWrapper
-          title="메뉴 1"
-          suffix={
-            <Button color="#3367d6">
-              <MdAdd /> 기능버튼
-            </Button>
-          }
-        />
-      </MainHeader>
-      <Section>Hello</Section>
-    </main>
+    <Router>
+      <main>
+        <MainHeader>
+          <SideBar menuList={menuList} title="서비스명" />
+          <HeaderTitleWrapper
+            title="메뉴 1"
+            suffix={
+              <Button color="#3367d6">
+                <MdAdd /> 기능버튼
+              </Button>
+            }
+          />
+        </MainHeader>
+        <Section>
+          <Switch>
+            <Route exact path="/">Home</Route>
+            <Route exact path="/about">About</Route>
+            <Route exact path="/users">Users</Route>
+          </Switch>
+        </Section>
+      </main>
+    </Router>
   );
 };
 export default App;

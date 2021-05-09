@@ -35,9 +35,9 @@ const SideBar = ({ menuList, title }: Props) => {
         {menuList.map((menu, index) => (
           <MenuItem
             key={index}
-            isSelected={menu.isSelected}
             title={menu.title}
             icon={menu.icon}
+            to={menu.to}
           />
         ))}
       </Menu>
