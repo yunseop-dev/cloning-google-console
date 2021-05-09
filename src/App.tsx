@@ -11,6 +11,9 @@ import SideBar from "./components/Sidebar";
 import Button from "./components/Button";
 import { Props as MenuItemProps } from "./components/MenuItem";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import About from "./pages/About";
+import Home from "./pages/Home";
+import Users from "./pages/Users";
 
 const MainHeader = styled.header`
   @media (max-width: 768px) {
@@ -62,9 +65,9 @@ const App: React.FC = () => {
         </MainHeader>
         <Section>
           <Switch>
-            <Route exact path="/">Home</Route>
-            <Route exact path="/about">About</Route>
-            <Route exact path="/users">Users</Route>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/about" component={About} />
+            <Route exact path="/users" component={Users} />
           </Switch>
         </Section>
       </main>
